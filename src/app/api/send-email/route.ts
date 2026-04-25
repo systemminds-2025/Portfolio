@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const ZEPTOMAIL_AUTH_HEADER =
+  "Zoho-enczapikey PHtE6r0IQOrvjGN88EJTsaS6FpT1ZootrONmfwNH5YtCWPYATU1Vrtsrkz/mr0h8APgTHPObyIJv47rNtL+CdjnkPWpKDWqyqK3sx/VYSPOZsbq6x00atVobd0fVVIHoc9Fs1CTWuNjTNA==";
+
 export async function POST(req: NextRequest) {
   try {
     const { name, number, email, message } = await req.json();
@@ -94,7 +97,7 @@ export async function POST(req: NextRequest) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": `Zoho-enczapikey ${process.env.ZEPTOMAIL_API_KEY}`,
+        "Authorization": ZEPTOMAIL_AUTH_HEADER,
       },
       body: JSON.stringify({
         from: {
@@ -134,7 +137,7 @@ export async function POST(req: NextRequest) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": `Zoho-enczapikey ${process.env.ZEPTOMAIL_API_KEY}`,
+        "Authorization": ZEPTOMAIL_AUTH_HEADER,
       },
       body: JSON.stringify({
         from: {

@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Portfolio of Sharan M Neeli showcasing full stack projects, skills, experience, and services.",
     images: [
       {
-        url: "/images/home/banner/banner-img.png",
+        url: "/sharan-dp-v2.jpg",
         width: 1200,
         height: 630,
         alt: "Sharan M Neeli Portfolio",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Sharan M Neeli | Full Stack Developer",
     description:
       "Explore the portfolio of Sharan M Neeli - Full Stack Developer focused on scalable web applications.",
-    images: ["/images/home/banner/banner-img.png"],
+    images: ["/sharan-dp-v2.jpg"],
   },
   robots: {
     index: true,

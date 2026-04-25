@@ -1,7 +1,6 @@
 "use client";
 import { getDataPath, getImgPath } from "@/utils/image";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Contact = () => {
@@ -38,6 +37,35 @@ const Contact = () => {
     });
   };
 
+  const sendViaFormSubmit = async () => {
+    const response = await fetch(
+      "https://formsubmit.co/ajax/sharanmneeli09@gmail.com",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          number: formData.number,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New Message from ${formData.name} - Portfolio Contact`,
+          _autoresponse:
+            "Thank you for contacting Sharan M Neeli. Your message has been received, and you will get a response soon.",
+          _captcha: "false",
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Fallback mail service failed");
+    }
+
+    return response.json();
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -55,19 +83,33 @@ const Contact = () => {
         }),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         setSubmitted(true);
         reset();
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        console.error("Email sending failed:", data);
-        alert("Failed to send email. Please try again.");
+        // Hostinger static hosting cannot serve /api/send-email, so fallback gracefully.
+        try {
+          await sendViaFormSubmit();
+          setSubmitted(true);
+          reset();
+          setTimeout(() => setSubmitted(false), 5000);
+        } catch (fallbackError) {
+          console.error("Fallback email sending failed:", fallbackError);
+          alert("Failed to send email. Please try again.");
+        }
       }
     } catch (error) {
-      console.error("Error sending email:", error);
-      alert("An error occurred. Please try again.");
+      try {
+        await sendViaFormSubmit();
+        setSubmitted(true);
+        reset();
+        setTimeout(() => setSubmitted(false), 5000);
+      } catch (fallbackError) {
+        console.error("Error sending email:", error);
+        console.error("Fallback email sending failed:", fallbackError);
+        alert("An error occurred. Please try again.");
+      }
     }
   };
   const handleChange = (e: any) => {

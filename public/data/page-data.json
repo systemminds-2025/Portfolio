@@ -1,0 +1,111 @@
+{
+  "contactBar": {
+    "contactItems": [
+      {
+        "type": "email",
+        "label": "sharanmneeli09@gmail.com",
+        "icon": "/images/icon/mail-icon.svg",
+        "link": "mailto:sharanmneeli09@gmail.com"
+      }
+    ],
+    "socialItems": [
+      {
+        "platform": "instagram",
+        "icon": "/images/icon/instagram-icon.svg",
+        "link": "https://www.instagram.com/sharan._09/"
+      },
+      {
+        "platform": "facebook",
+        "icon": "/images/icon/facebook-icon.svg",
+        "link": "https://www.facebook.com/p/Sharan-M-Neeli-100013746105869/"
+      },
+      {
+        "platform": "linkedin",
+        "icon": "/images/icon/linkedin-icon.svg",
+        "link": "https://www.linkedin.com/in/sharanm09/"
+      }
+    ]
+  },
+  "educationData": {
+    "education": [
+      {
+        "title": "SEA College of Science, Commerce and Arts, MCA - 2022-2024",
+        "description": "CGPA: 8.57"
+      },
+      {
+        "title": "CMR University, BCA - 2019-2022",
+        "description": "CGPA: 6.7"
+      },
+      {
+        "title": "Narayana PU College, PCMC - 2017-2019",
+        "description": "Percentage: 73%"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Figma",
+        "icon": "/images/home/education-skill/figma-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "Photoshop",
+        "icon": "/images/home/education-skill/photoshop-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "Sketch",
+        "icon": "/images/home/education-skill/sketch-icon.svg",
+        "rating": 4
+      },
+      {
+        "name": "Adobe XD",
+        "icon": "/images/home/education-skill/adobe-icon.svg",
+        "rating": 4
+      },
+      {
+        "name": "Framer",
+        "icon": "/images/home/education-skill/framer-icon.svg",
+        "rating": 5
+      },
+      {
+        "name": "Invasion",
+        "icon": "/images/home/education-skill/invision-icon.svg",
+        "rating": 3
+      }
+    ]
+  },
+  "contactLinks": {
+    "socialLinks": [
+      {
+        "title": "Instagram",
+        "href": "https://www.instagram.com/sharan._09/",
+        "icon": "/images/icon/instagram-icon.svg",
+        "platform": "instagram"
+      },
+      {
+        "title": "Facebook",
+        "href": "https://www.facebook.com/p/Sharan-M-Neeli-100013746105869/",
+        "icon": "/images/icon/facebook-icon.svg",
+        "platform": "facebook"
+      },
+      {
+        "title": "LinkedIn",
+        "href": "https://www.linkedin.com/in/sharanm09/",
+        "icon": "/images/icon/linkedin-icon.svg",
+        "platform": "linkedin"
+      }
+    ],
+    "contactInfo": [
+      {
+        "type": "email",
+        "label": "sharanmneeli09@gmail.com",
+        "link": "mailto:sharanmneeli09@gmail.com"
+      },
+      {
+        "type": "website",
+        "label": "systemmindz.com",
+        "link": "https://systemmindz.com"
+      }
+    ]
+  }
+}

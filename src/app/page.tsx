@@ -8,11 +8,15 @@ import HeroSection from "./components/home/hero-section";
 import LatestWork from "./components/home/latest-work";
 import SkillsSection from "./components/home/skills-section";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL &&
-  process.env.NEXT_PUBLIC_SITE_URL.startsWith("http")
-    ? process.env.NEXT_PUBLIC_SITE_URL
-    : "https://systemmindz.com";
+const rawSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+  process.env.VERCEL_URL ||
+  "https://systemmindz.com";
+const siteUrl = (rawSiteUrl.startsWith("http")
+  ? rawSiteUrl
+  : `https://${rawSiteUrl}`
+).replace(/\/$/, "");
 
 export const metadata: Metadata = {
   title: "Sharan M Neeli",

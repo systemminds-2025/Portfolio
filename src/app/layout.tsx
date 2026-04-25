@@ -4,11 +4,15 @@ import "./globals.css";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL &&
-  process.env.NEXT_PUBLIC_SITE_URL.startsWith("http")
-    ? process.env.NEXT_PUBLIC_SITE_URL
-    : "https://systemmindz.com";
+const rawSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+  process.env.VERCEL_URL ||
+  "https://systemmindz.com";
+const siteUrl = (rawSiteUrl.startsWith("http")
+  ? rawSiteUrl
+  : `https://${rawSiteUrl}`
+).replace(/\/$/, "");
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-geist-sans",

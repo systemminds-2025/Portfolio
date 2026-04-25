@@ -1,15 +1,20 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.NODE_ENV === "production" ? "/Resume-Nextjs" : "";
+const isGithubPages = process.env.DEPLOY_TARGET === "github-pages";
+const basePath = isGithubPages ? "/Resume-Nextjs" : "";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  basePath,
-  assetPrefix: basePath,
+  ...(isGithubPages
+    ? {
+        output: "export" as const,
+        basePath,
+        assetPrefix: basePath,
+        trailingSlash: true,
+      }
+    : {}),
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },

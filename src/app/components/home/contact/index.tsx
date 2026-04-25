@@ -69,6 +69,23 @@ const Contact = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
+    const isHostingerStatic =
+      process.env.NEXT_PUBLIC_DEPLOY_TARGET === "hostinger-static";
+
+    if (isHostingerStatic) {
+      try {
+        await sendViaFormSubmit();
+        setSubmitted(true);
+        reset();
+        setTimeout(() => setSubmitted(false), 5000);
+      } catch (fallbackError) {
+        console.error("Fallback email sending failed:", fallbackError);
+        alert("Failed to send email. Please try again.");
+      }
+
+      return;
+    }
+
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",

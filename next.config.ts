@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
   },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_DEPLOY_TARGET: deployTarget || "",
   },
 };
 

@@ -87,7 +87,7 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-gray-800 pt-8">
           <p className="text-gray-500 text-center text-sm">
-            © 2024 Sharan M Neeli ❤️ All rights reserved.
+            © 2025 Sharan M Neeli ❤️ All rights reserved.
           </p>
         </div>
       </div>
